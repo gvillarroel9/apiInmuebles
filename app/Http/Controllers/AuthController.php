@@ -19,7 +19,6 @@ class AuthController extends Controller
             'contact' => 'integer|required',
             'local_phone' => 'boolean'
         ]);
-        echo "Prueba ";
         $user = new User([
             'name'=> $request->name,
             'lastname' => $request->lastname,
