@@ -15,22 +15,40 @@ class AuthController extends Controller
             'name'     => 'required|string',
             'email'    => 'required|string|email|unique:users',
             'password' => 'required|string|confirmed',
+            'lastname' => 'required|string',
+            'contact' => 'integer|required',
+            'local_phone' => 'boolean'
         ]);
         $user = new User([
-            'name'     => $request->name,
+            'name'=> $request->name,
+            'lastname' => $request->lastname,
             'email'    => $request->email,
             'password' => bcrypt($request->password),
-        ]);
+            'contact' => $request->contact,
+            'other_contact'=> $request->other_contact,
+            'country_id' => $request->country_id,
+            'local_phone' => $request->local_phone,            
+            'phone' => $request->phone,
+            'company' => $request->company,
+            'language' => $request->language,
+            'frequency' => $request->frequency,
+            'service_interest'=> $request->service_interest,
+            'day'=> $request->day,
+            'month'=> $request->month,
+            'year' => $request->year,
+        ]);       
         $user->save();
         return response()->json([
             'message' => 'Successfully created user!'], 201);
     }
+
+
     public function login(Request $request)
     {
         $request->validate([
             'email'       => 'required|string|email',
             'password'    => 'required|string',
-            'remember_me' => 'boolean',
+            'remember_me' => 'boolean',            
         ]);
         $credentials = request(['email', 'password']);
         if (!Auth::attempt($credentials)) {

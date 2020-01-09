@@ -23,3 +23,5 @@ Route::group(['prefix' => 'auth'], function () {
         Route::get('user', 'AuthController@user');
     });
 });
+
+    Route::resource('countries','CountriesController',['except' => ['create','edit']]);
