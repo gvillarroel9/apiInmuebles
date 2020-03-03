@@ -13,7 +13,7 @@ class CountriesController extends Controller
         // Solo chequea cliente-id, no tiene que loguearse en el sistema
         //$this->middleware('client.credentials')->only(['index']);
         // chequea usuarios autenticados
-        //$this->middleware('auth:api');
+        $this->middleware('auth:api');
     }  
     /**
      * Display a listing of the resource.
