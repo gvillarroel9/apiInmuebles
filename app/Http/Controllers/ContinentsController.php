@@ -26,7 +26,6 @@ class ContinentsController extends Controller
     public function store(Request $request)
     {
         $Continent = Continent::create($request->all());
-
         return response()->json($Continent, 201);
     }
 
@@ -41,7 +40,6 @@ class ContinentsController extends Controller
     public function delete(Continent $Continent)
     {
         $Continent->delete();
-
         return response()->json(null, 204);
     }
 }
