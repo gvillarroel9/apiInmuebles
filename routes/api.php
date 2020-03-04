@@ -23,7 +23,9 @@ Route::group(['prefix' => 'auth'], function () {
         Route::get('user', 'AuthController@user');
     });
 });
-
-Route::group(['middleware' => 'auth:api'], function() {
+    Route::resource('continents','ContinentsController',['except' => ['create','edit']]);
     Route::resource('countries','CountriesController',['except' => ['create','edit']]);
-});
+    Route::get('countries/{continentId}/continent', 'CountriesController@countryByContinentId');
+    Route::resource('states','StatesController');
+    Route::resource('cities','CitiesController',['except' => ['create','edit']]);
+    Route::resource('zones','ZonesController',['except' => ['create','edit']]);

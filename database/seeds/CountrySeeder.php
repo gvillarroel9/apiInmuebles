@@ -18,7 +18,11 @@ class CountrySeeder extends Seeder
         $filename = dirname(__FILE__) . '/data/countries.csv';
         foreach(file($filename, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES) as $line) {
             $countryInfo = explode(",", $line);
-            $country = ['name'=> $countryInfo[1]];
+            $country = [
+                'name'=> $countryInfo[0],
+                'id'=> $countryInfo[1],
+                'continentId'=> $countryInfo[2],              
+            ];
             Country::create($country);
         }
     }

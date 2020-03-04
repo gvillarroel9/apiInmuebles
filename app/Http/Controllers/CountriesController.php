@@ -13,7 +13,7 @@ class CountriesController extends Controller
         // Solo chequea cliente-id, no tiene que loguearse en el sistema
         //$this->middleware('client.credentials')->only(['index']);
         // chequea usuarios autenticados
-        $this->middleware('auth:api');
+        //$this->middleware('auth:api');
     }  
     /**
      * Display a listing of the resource.
@@ -26,6 +26,12 @@ class CountriesController extends Controller
         return response()->json($countries, 200);
     }
 
+    public function countryByContinentId($id)
+    {
+        $countries = Country::where('continentId','=',$id)->get();
+        return response()->json($countries, 200); // sin paginacion
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -34,8 +40,8 @@ class CountriesController extends Controller
      */
     public function store(Request $request)
     {
-        $country = Country::create($request->all());
-        return response()->json($country, 201);
+        //$country = Country::create($request->all());
+        //return response()->json($country, 201);
     }
 
     /**
@@ -59,8 +65,8 @@ class CountriesController extends Controller
      */
     public function update(Request $request, Country $country)
     {
-        $country = Country::update($request->all());
-        return response()->json($country, 201);
+        //$country = Country::update($request->all());
+        //return response()->json($country, 201);
     }
 
     /**
@@ -71,7 +77,7 @@ class CountriesController extends Controller
      */
     public function destroy(Country $country)
     {
-        $country->delete();
-        return response()->json(null, 204);
+        //$country->delete();
+        //return response()->json(null, 204);
     }
 }

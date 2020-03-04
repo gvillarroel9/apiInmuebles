@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Continent;
 
 class ContinentsController extends Controller
 {
@@ -10,7 +11,7 @@ class ContinentsController extends Controller
     {
         // chequea usuarios autenticados
         //$this->middleware('auth:api');
-    }  
+    }      
 
     public function index()
     {
@@ -42,4 +43,7 @@ class ContinentsController extends Controller
         $Continent->delete();
         return response()->json(null, 204);
     }
+
+
+
 }
