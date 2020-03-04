@@ -27,5 +27,8 @@ Route::group(['prefix' => 'auth'], function () {
     Route::resource('countries','CountriesController',['except' => ['create','edit']]);
     Route::get('countries/{continentId}/continent', 'CountriesController@countryByContinentId');
     Route::resource('states','StatesController');
+    Route::get('states/{countryId}/country', 'StatesController@stateByCountryId');
     Route::resource('cities','CitiesController',['except' => ['create','edit']]);
+    Route::get('cities/{stateId}/state', 'CitiesController@cityByStateId');
     Route::resource('zones','ZonesController',['except' => ['create','edit']]);
+    Route::get('zones/{cityId}/city', 'ZonesController@zoneByCityId');

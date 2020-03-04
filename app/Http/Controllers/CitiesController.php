@@ -17,4 +17,10 @@ class CitiesController extends Controller
     {
         return $city;
     }
+
+    public function cityByStateId($id)
+    {
+        $cities = City::where('stateId','=',$id)->get();
+        return response()->json($cities, 200); // sin paginacion
+    }
 }

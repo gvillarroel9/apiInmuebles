@@ -24,5 +24,11 @@ class StatesController extends Controller
     {
         return $state;
     }
+
+    public function stateByCountryId($id)
+    {
+        $states = State::where('countryId','=',$id)->get();
+        return response()->json($states, 200); // sin paginacion
+    }
     
 }

@@ -18,5 +18,11 @@ class ZonesController extends Controller
     {
         return $zone;
     }
+
+    public function zoneByCityId($id)
+    {
+        $zones = Zone::where('cityId','=',$id)->get();
+        return response()->json($zones, 200); // sin paginacion
+    }
     
 }
