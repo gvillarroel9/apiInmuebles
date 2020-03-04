@@ -29,3 +29,6 @@ Route::group(['prefix' => 'auth'], function () {
     Route::resource('states','StatesController');
     Route::resource('cities','CitiesController',['except' => ['create','edit']]);
     Route::resource('zones','ZonesController',['except' => ['create','edit']]);
+
+    Route::resource('householdcomodity','HouseholdcomodityController',['except' => ['create','edit']]);
+    Route::resource('householdservice','HouseholdserviceController',['except' => ['create','edit']]);
