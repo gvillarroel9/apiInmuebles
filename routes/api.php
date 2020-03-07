@@ -32,3 +32,8 @@ Route::group(['prefix' => 'auth'], function () {
     Route::get('cities/{stateId}/state', 'CitiesController@cityByStateId');
     Route::resource('zones','ZonesController',['except' => ['create','edit']]);
     Route::get('zones/{cityId}/city', 'ZonesController@zoneByCityId');
+
+    Route::resource('householdcomodity','HouseholdcomodityController',['except' => ['create','edit']]);
+    Route::resource('householdservice','HouseholdserviceController',['except' => ['create','edit']]);
+    Route::resource('companies','CompanyController');
+    Route::resource('contactmethods','ContactmethodController');

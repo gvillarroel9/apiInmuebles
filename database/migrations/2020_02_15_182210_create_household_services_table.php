@@ -15,6 +15,7 @@ class CreateHouseholdServicesTable extends Migration
     {
         Schema::create('household_services', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
             $table->timestamps();
         });
     }
