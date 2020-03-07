@@ -4,9 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Service extends Model
+class Contactmethod extends Model
 {
     protected $fillable = [
-        'id', 'name'
+        'id', 
+        'is_social',
+        'name'
     ];
 }

@@ -32,3 +32,5 @@ Route::group(['prefix' => 'auth'], function () {
 
     Route::resource('householdcomodity','HouseholdcomodityController',['except' => ['create','edit']]);
     Route::resource('householdservice','HouseholdserviceController',['except' => ['create','edit']]);
+    Route::resource('companies','CompanyController');
+    Route::resource('contactmethods','ContactmethodController');
