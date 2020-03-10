@@ -14,8 +14,8 @@ class CreateHouseholdServicesTable extends Migration
     public function up()
     {
         Schema::create('household_services', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('name');
+            $table->integer('idHousehold');
+            $table->integer('idServiceHousehold');
             $table->timestamps();
         });
     }

@@ -30,7 +30,7 @@ Route::group(['prefix' => 'auth'], function () {
     Route::resource('cities','CitiesController',['except' => ['create','edit']]);
     Route::resource('zones','ZonesController',['except' => ['create','edit']]);
 
-    Route::resource('householdcomodity','HouseholdcomodityController',['except' => ['create','edit']]);
-    Route::resource('householdservice','HouseholdserviceController',['except' => ['create','edit']]);
+    Route::resource('comodity','ComodityController',['except' => ['create','edit']]);
+    Route::resource('service','ServiceController',['except' => ['create','edit']]);
     Route::resource('companies','CompanyController');
     Route::resource('contactmethods','ContactmethodController');

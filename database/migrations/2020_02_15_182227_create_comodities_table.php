@@ -15,6 +15,7 @@ class CreateComoditiesTable extends Migration
     {
         Schema::create('comodities', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
             $table->timestamps();
         });
     }

@@ -14,8 +14,8 @@ class CreateHouseholdComoditiesTable extends Migration
     public function up()
     {
         Schema::create('household_comodities', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('name');
+            $table->integer('idHousehold');
+            $table->integer('idCommodity');
             $table->timestamps();
         });
     }

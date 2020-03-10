@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class HouseholdComodity extends Model
 {
     protected $fillable = [
-        'id', 'name'
+        'idHousehold', 'idCommodity'
     ];
 }
