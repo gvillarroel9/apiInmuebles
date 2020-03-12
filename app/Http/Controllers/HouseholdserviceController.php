@@ -17,4 +17,18 @@ class HouseholdserviceController extends Controller
     {
         return $householdservice;
     }
+
+    public function store(Request $request)
+    {
+        $householdservice = HouseholdService::create($request->all());
+        return response()->json($householdservice, 201);
+    }
+
+    public function update(Request $request, Continent $householdservice)
+    {
+        
+        $householdservice->update($request->all());
+
+        return response()->json($householdservice, 200);
+    }
 }

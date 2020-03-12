@@ -15,6 +15,19 @@ class CreateHouseholdsTable extends Migration
     {
         Schema::create('households', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('propertyType');
+            $table->integer('household_in');
+            $table->integer('zoneId');
+            $table->integer('roomsNumber');
+            $table->integer('bathroomsNumber');
+            $table->integer('parkingNumbers');
+            $table->string('details');
+            $table->string('proximityServicesTransport');
+            $table->string('location');
+            $table->integer('price');
+            $table->integer('idCurrency');
+            $table->integer('initHour');
+            $table->integer('finishHour');
             $table->timestamps();
         });
     }

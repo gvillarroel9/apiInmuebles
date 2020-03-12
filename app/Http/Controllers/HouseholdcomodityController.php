@@ -17,4 +17,18 @@ class HouseholdcomodityController extends Controller
     {
         return $householdcomodity;
     }
+
+    public function store(Request $request)
+    {
+        $householdcomodity = HouseholdComodity::create($request->all());
+        return response()->json($householdcomodity, 201);
+    }
+
+    public function update(Request $request, Continent $householdcomodity)
+    {
+        
+        $householdcomodity->update($request->all());
+
+        return response()->json($householdcomodity, 200);
+    }
 }

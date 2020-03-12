@@ -10,8 +10,8 @@ class Company extends Model
         'id', 
         'name',
         'rif',
-        'country',
-        'city',
+        'countryId',
+        'cityId',
         'address'
     ];
 }
