@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
         $this->call(PropertySeeder::class);
         $this->call(HouseholdInSeeder::class);
         $this->call(CurrencySeeder::class);
+        $this->call(ContactDaysSeeder::class);
         DB::statement('SET FOREIGN_KEY_CHECKS = 1;');
         
     }

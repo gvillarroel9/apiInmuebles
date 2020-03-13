@@ -38,3 +38,8 @@ Route::group(['prefix' => 'auth'], function () {
     Route::resource('contactmethods','ContactmethodController');
     Route::resource('household','HouseholdController');
     Route::post('createHousehold','HouseholdController@createHousehold');
+    Route::resource('property','PropertyController');
+    Route::resource('householdin','HouseholdInController');
+    Route::resource('currency','CurrencyController');
+    Route::resource('contactdays','ContactDaysController');
+    
