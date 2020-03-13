@@ -28,7 +28,7 @@ class HouseholdController extends Controller
     {
         $request->validate([
             'propertyType' => 'required|integer',
-            'household_in' => 'required|integer',
+            'householdin' => 'required|integer',
             'zoneId' => 'required|integer',
             'roomsNumber' => 'required|integer',
             'bathroomsNumber' => 'required|integer',
@@ -44,7 +44,7 @@ class HouseholdController extends Controller
 
         $user = new Household([
         'propertyType' => $request->propertyType,
-        'household_in' => $request->household_in,
+        'householdin' => $request->householdin,
         'zoneId' => $request->zoneId,
         'roomsNumber' => $request->roomsNumber,
         'bathroomsNumber' => $request->bathroomsNumber,

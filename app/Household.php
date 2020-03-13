@@ -9,7 +9,7 @@ class Household extends Model
     protected $fillable = [
         'id',
         'propertyType',
-        'household_in',
+        'householdin',
         'zoneId',
         'roomsNumber',
         'bathroomsNumber',
