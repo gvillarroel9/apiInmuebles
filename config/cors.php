@@ -24,28 +24,11 @@ return [
         ],
 
         'allow_methods' => [
-            'POST',
-            'GET',
-            'OPTIONS',
-            'PUT',
-            'PATCH',
-            'DELETE',
+            '*',
         ],
 
         'allow_headers' => [
-            'Content-Type',
-            'X-Auth-Token',
-            'Origin',
-            'Authorization',
-        ],
-
-        'expose_headers' => [
-            'Cache-Control',
-            'Content-Language',
-            'Content-Type',
-            'Expires',
-            'Last-Modified',
-            'Pragma',
+            '*',
         ],
 
         'forbidden_response' => [
@@ -56,6 +39,6 @@ return [
         /*
          * Preflight request will respond with value for the max age header.
          */
-        'max_age' => 60 * 60 * 24,
+        'max_age' => 0,
     ],
 ];
