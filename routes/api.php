@@ -12,17 +12,19 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-Route::group(['prefix' => 'auth'], function () {
+Route::group(['middleware' => 'cors'], function() {
+    Route::group(['prefix' => 'auth'], function () {
+        
+        Route::post('login', 'AuthController@login');
+        Route::post('signup', 'AuthController@signup');
     
-    Route::post('login', 'AuthController@login');
-    Route::post('signup', 'AuthController@signup');
-  
-    Route::group(['middleware' => 'auth:api'], function() {
-        Route::get('logout', 'AuthController@logout');
-        Route::get('user', 'AuthController@user');
+        Route::group(['middleware' => 'auth:api'], function() {
+            Route::get('logout', 'AuthController@logout');
+            Route::get('user', 'AuthController@user');
+        });
     });
 });
+
     Route::resource('continents','ContinentsController',['except' => ['create','edit']]);
     Route::resource('countries','CountriesController',['except' => ['create','edit']]);
     Route::get('countries/{continentId}/continent', 'CountriesController@countryByContinentId');
