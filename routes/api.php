@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 Route::group(['middleware' => 'cors'], function() {
+    
     Route::group(['prefix' => 'auth'], function () {
         
         Route::post('login', 'AuthController@login');
@@ -23,7 +24,6 @@ Route::group(['middleware' => 'cors'], function() {
             Route::get('user', 'AuthController@user');
         });
     });
-});
 
     Route::resource('continents','ContinentsController',['except' => ['create','edit']]);
     Route::resource('countries','CountriesController',['except' => ['create','edit']]);
@@ -39,3 +39,5 @@ Route::group(['middleware' => 'cors'], function() {
     Route::resource('householdservice','HouseholdserviceController',['except' => ['create','edit']]);
     Route::resource('companies','CompanyController');
     Route::resource('contactmethods','ContactmethodController');
+
+});
