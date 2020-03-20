@@ -13,8 +13,7 @@ use Illuminate\Http\Request;
 |
 */
     
-    Route::group(['prefix' => 'auth'], function () {
-        
+    Route::group(['prefix' => 'auth'], function () {        
         Route::post('login', 'AuthController@login');
         Route::post('signup', 'AuthController@signup');
         Route::group(['middleware' => 'auth:api'], function() {
@@ -22,6 +21,8 @@ use Illuminate\Http\Request;
             Route::get('user', 'AuthController@user');
         });
     });
+
+    Route::post('password/email', 'Auth\ForgotPasswordController@getResetToken');
 
     Route::resource('continents','ContinentsController',['except' => ['create','edit']]);
     Route::resource('countries','CountriesController',['except' => ['create','edit']]);
