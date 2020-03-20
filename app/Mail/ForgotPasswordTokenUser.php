@@ -25,7 +25,7 @@ class ForgotPasswordTokenUser extends Mailable
         $this->appName = env("APP_NAME", "INMUEBLE API");
         $this->urlAppFrontend = env("APP_FRONTEND_URL", "http://localhost:4200");
         $currentPath = $this->urlAppFrontend . '/reset/';
-        $this->enlace = $currentPath . $token . '/';
+        $this->enlace = $currentPath . $token . '/'.$email;
     }
 
     /**
@@ -36,7 +36,7 @@ class ForgotPasswordTokenUser extends Mailable
     public function build()
     {
         //return $this->view('view.name');
-        return $this->from('no-reply@myclubweb.com')
+        return $this->from('no-reply@appinmueble.com')
                     ->subject('Recovery password')
                     ->view('emailPassword');
     }

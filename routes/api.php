@@ -14,7 +14,8 @@ use Illuminate\Http\Request;
 */
     
     Route::group(['prefix' => 'auth'], function () {  
-        Route::post('password', 'Auth\ForgotPasswordController@getResetToken');      
+        Route::post('password', 'Auth\ForgotPasswordController@getResetToken');   
+        Route::post('password/verifyTokenPassword', 'Auth\ResetPasswordController@reset');   
         Route::post('login', 'AuthController@login');
         Route::post('signup', 'AuthController@signup');
         Route::group(['middleware' => 'auth:api'], function() {
