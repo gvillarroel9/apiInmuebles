@@ -25,7 +25,17 @@ class ForgotPasswordController extends Controller
 
     public function getResetToken(Request $request)
     {
-        $this->validate($request, ['email' => 'required|email']);
+        
+        if($request->input('email')){
+            $user = User::where('email', $request->input('email'))->first();
+        }else {
+            if ($request->input('dni')){
+                $user = User::where('dni', $request->input('dni'))->first();
+            } else {
+                $user = User::where('phone', $request->input('phone'))->first();
+            }
+        }
+
             $user = User::where('email', $request->input('email'))->first();
             if (!$user) {
                 //return $this->errorResponse(trans('passwords.user'), 400);
