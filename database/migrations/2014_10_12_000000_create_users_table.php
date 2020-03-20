@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('lastname');
             $table->string('dni');
             $table->integer('contact');
-            $table->integer('contact-social');
+            $table->integer('contact_social');
             $table->string('other_contact');
             $table->unsignedInteger('country_id');            
             $table->boolean('local_phone');

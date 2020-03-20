@@ -23,7 +23,7 @@ class AuthController extends Controller
             'password' => bcrypt($request->password),
             'lastname'=> $request->lastname,
             'contact'=> $request->contact,
-            'contact-social'=> $request->contact-social, 
+            'contact_social'=> $request->contact_social, 
             'other_contact'=> $request->other_contact,
             'country_id'=> $request->country_id,            
             'local_phone'=> $request->local_phone,
@@ -48,7 +48,7 @@ class AuthController extends Controller
             'day'=> $request->day,
             'month'=> $request->month,
             'year'=> $request->year,
-            'user_email'=> $user_email->year
+            'user_email'=> $request->user_email
         ]);       
         $user->save();
         return response()->json([

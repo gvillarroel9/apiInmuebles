@@ -24,7 +24,7 @@ class User extends Authenticatable
         'password',
         'lastname',
         'contact',
-        'contact-social', 
+        'contact_social', 
         'other_contact',
         'country_id',            
         'local_phone',
