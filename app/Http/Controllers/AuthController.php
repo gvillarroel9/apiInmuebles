@@ -13,13 +13,13 @@ class AuthController extends Controller
     {
         $request->validate([
             'name'     => 'required|string',
-            'email'    => 'required|string',
+            'email'    => 'required|string|email|unique:users',
             'password' => 'required|string|confirmed'
         ]);
 
         $user = new User([
             'name'=> $request->name,
-            'email'=> str_replace('"','',$request->email),
+            'email'=> $request->email,
             'dni'=> $request->dni,
             'password' => bcrypt($request->password),
             'lastname'=> $request->lastname,
@@ -67,7 +67,7 @@ class AuthController extends Controller
         $credentials = request(['email', 'password']);
         if (!Auth::attempt($credentials)) {
             return response()->json([
-                'message' => 'Unauthorized'], 401);
+                'message' => 'Invalid Credentials'], 401);
         }
         $user = $request->user();
         $tokenResult = $user->createToken('Personal Access Token');
