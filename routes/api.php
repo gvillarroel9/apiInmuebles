@@ -25,6 +25,8 @@ use Illuminate\Http\Request;
     });
 
     Route::post('password', 'Auth\ForgotPasswordController@getResetToken');
+    Route::resource('household','HouseholdController');
+
 
     Route::resource('continents','ContinentsController',['except' => ['create','edit']]);
     Route::resource('countries','CountriesController',['except' => ['create','edit']]);
